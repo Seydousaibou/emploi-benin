@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offres d'Emploi - Emploi Bénin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .job-card-pro {
+            transition: all 0.3s ease;
+            border-radius: 15px;
+            overflow: hidden;
+            border: none !important;
+        }
+
+        .job-card-pro:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .custom-check-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .custom-check-container:hover {
+            background-color: #fff1f0;
+        }
+
+        .custom-check-container input {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .search-bar {
+            border-radius: 50px;
+            padding-left: 25px;
+            border: 2px solid #eee;
+        }
+
+        .search-bar:focus {
+            border-color: #198754;
+            box-shadow: none;
+        }
+
+        .badge-price {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html" style="color: #2e7d32;">
+                <img src="assets/unnamed.jpg" alt="Logo" width="55" height="55" class="me-2 shadow-sm rounded">
+                <span>Emploi <span style="color: #e67e22;">Bénin</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link px-3" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link active px-3 fw-bold" href="offres.html">Offres d'emploi</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link px-3" href="creer-cv.html">Profils/CV</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3">← Retour</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3">Toutes les Opportunités</h2>
+            <div class="row justify-content-center mt-4">
+                <div class="col-md-7 position-relative">
+                    <input type="text" id="searchInput" class="form-control form-control-lg shadow-sm search-bar"
+                        placeholder="Rechercher un poste ou une ville...">
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-warning border-0 shadow-sm d-flex align-items-center mb-5 rounded-4 p-3" role="alert">
+            <i class="bi bi-exclamation-triangle-fill fs-3 me-3 text-danger"></i>
+            <div>
+                <h6 class="fw-bold mb-1">Alerte Sécurité : Ne payez jamais pour un emploi !</h6>
+                <p class="small mb-0 text-dark opacity-75">Emploi Bénin ne demande aucun frais. Si un recruteur vous
+                    demande de l'argent, signalez-le.</p>
+            </div>
+        </div>
+
+        <div class="row g-4" id="jobContainer">
+
+            <div class="col-md-6 job-card">
+                <div class="card shadow-sm p-4 h-100 job-card-pro">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="fw-bold mb-1">Caissier(e) de Clinique</h5>
+                            <p class="text-success mb-0 small fw-bold"><i
+                                    class="bi bi-geo-alt-fill me-1"></i>Abomey-Calavi</p>
+                        </div>
+                        <span
+                            class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3">Licence</span>
+                    </div>
+                    <p class="text-muted small flex-grow-1">Clinique médicale. Profil dynamique, accueillant, maîtrise
+                        de l'outil informatique et du FON. Habiter Calavi obligatoire.</p>
+                    <div class="pt-3 border-top mt-3">
+                        <a href="https://wa.me/2290195582126?text=Bonjour,%20je%20postule%20pour%20le%20poste%20de%20Caissier%20à%20Calavi"
+                            target="_blank" class="btn btn-success w-100 fw-bold rounded-pill shadow-sm">
+                            <i class="bi bi-whatsapp me-2"></i>Postuler sur WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 job-card">
+                <div class="card shadow-sm p-4 h-100 job-card-pro">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="fw-bold mb-1">Serveuse (Soirée)</h5>
+                            <p class="text-success mb-0 small fw-bold"><i class="bi bi-geo-alt-fill me-1"></i>Godomey
+                                Gbèigan</p>
+                        </div>
+                        <span class="badge badge-price rounded-pill px-3">30.000 F</span>
+                    </div>
+                    <p class="text-muted small flex-grow-1">Service dans un bar, uniquement en soirée. Immédiatement
+                        disponible.</p>
+                    <div class="pt-3 border-top mt-3">
+                        <a href="https://wa.me/22953192599?text=Bonjour,%20je%20suis%20intéressée%20par%20le%20poste%20de%20serveuse%20à%20Godomey"
+                            target="_blank" class="btn btn-success w-100 fw-bold rounded-pill shadow-sm">
+                            <i class="bi bi-whatsapp me-2"></i>Postuler sur WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4" id="jobContainer">
+
+                <div class="col-md-6 job-card">
+                    <div class="card shadow-sm p-4 h-100 job-card-pro border-start border-4 border-primary">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h5 class="fw-bold mb-1">1500 Agents (GDIZ)</h5>
+                                <p class="text-primary mb-0 small fw-bold"><i
+                                        class="bi bi-buildings-fill me-1"></i>Glo-Djigbé (Zone Industrielle)</p>
+                            </div>
+                            <span class="badge bg-primary rounded-pill px-3">Recrutement Massif</span>
+                        </div>
+                        <p class="text-muted small flex-grow-1">Secteurs : Industriel, Supermarché, Textile. Recrutement
+                            organisé par l'ANPE pour les jeunes filles et garçons.</p>
+                        <div class="pt-3 border-top mt-3">
+                            <a href="https://wa.me/2290145586708?text=Bonjour,%20je%20souhaite%20postuler%20pour%20le%20recrutement%20GDIZ"
+                                target="_blank" class="btn btn-primary w-100 fw-bold rounded-pill shadow-sm">
+                                <i class="bi bi-whatsapp me-2"></i>Postuler via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 job-card">
+                    <div class="card shadow-sm p-4 h-100 job-card-pro">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h5 class="fw-bold mb-1">Agents Promotion Fibre (Celtiis)</h5>
+                                <p class="text-success mb-0 small fw-bold"><i
+                                        class="bi bi-geo-alt-fill me-1"></i>Abomey-Calavi & Environs</p>
+                            </div>
+                            <span class="badge bg-warning text-dark rounded-pill px-3">5.000F / Commission</span>
+                        </div>
+                        <p class="text-muted small flex-grow-1">Promotion de la fibre optique. Niveau BEPC minimum.
+                            Expérience en marketing terrain souhaitée. Urgent !</p>
+                        <div class="pt-3 border-top mt-3">
+                            <a href="https://wa.me/2290192252528?text=Bonjour,%20je%20suis%20intéressé%20par%20le%20poste%20d'agent%20Fibre%20Celtiis"
+                                target="_blank" class="btn btn-success w-100 fw-bold rounded-pill shadow-sm">
+                                <i class="bi bi-whatsapp me-2"></i>Contacter Celtiis
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 job-card">
+                    <div class="card shadow-sm p-4 h-100 job-card-pro">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h5 class="fw-bold mb-1">2 Agents Collecteurs (Hommes)</h5>
+                                <p class="text-success mb-0 small fw-bold"><i
+                                        class="bi bi-geo-alt-fill me-1"></i>Gbegamey & Calavi</p>
+                            </div>
+                            <span class="badge bg-dark rounded-pill px-3">50.000 F / mois</span>
+                        </div>
+                        <p class="text-muted small flex-grow-1">Moto obligatoire. Travail d'équipe. Pas de vente
+                            ambulante. Dossier : CV, Photos, CIP, Avaliseur.</p>
+                        <div class="pt-3 border-top mt-3">
+                            <a href="https://wa.me/2290191777668?text=Bonjour,%20je%20souhaite%20déposer%20mon%20dossier%20pour%20le%20poste%20d'agent%20collecteur"
+                                target="_blank" class="btn btn-success w-100 fw-bold rounded-pill shadow-sm">
+                                <i class="bi bi-whatsapp me-2"></i>Envoyer mon dossier
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 job-card">
+                    <div class="card shadow-sm p-4 h-100 job-card-pro">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h5 class="fw-bold mb-1">Serveuse & Cuisinière</h5>
+                                <p class="text-success mb-0 small fw-bold"><i
+                                        class="bi bi-geo-alt-fill me-1"></i>Maria-Gléta (Calavi)</p>
+                            </div>
+                            <span class="badge bg-danger rounded-pill px-3">Logement Inclus</span>
+                        </div>
+                        <p class="text-muted small flex-grow-1">Vente boissons SOBEBRA. Jeunes femmes dynamiques et
+                            présentables. Disponibilité immédiate.</p>
+                        <div class="pt-3 border-top mt-3">
+                            <a href="https://wa.me/2290195508743?text=Bonjour,%20je%20postule%20pour%20l'offre%20à%20Maria%20Gléta"
+                                target="_blank" class="btn btn-success w-100 fw-bold rounded-pill shadow-sm">
+                                <i class="bi bi-whatsapp me-2"></i>Postuler via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 job-card">
+                    <div class="card shadow-sm p-4 h-100 job-card-pro border-2 border-warning">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                                <h5 class="fw-bold mb-1 text-warning">Formation : Communicant Pro</h5>
+                                <p class="text-muted mb-0 small fw-bold"><i class="bi bi-laptop me-1"></i>En ligne
+                                    (WhatsApp/Visio)</p>
+                            </div>
+                            <span class="badge bg-warning text-dark rounded-pill px-3">Formation Premium</span>
+                        </div>
+                        <p class="text-muted small flex-grow-1">Devenez porte-parole, attaché de presse ou chargé de
+                            com. Animé par Mr Olaf HOUNMENOU. Tarif: 100.000 FCFA.</p>
+                        <div class="pt-3 border-top mt-3">
+                            <a href="https://wa.me/22996929774" target="_blank"
+                                class="btn btn-outline-warning w-100 fw-bold rounded-pill shadow-sm text-dark">
+                                <i class="bi bi-info-circle me-2"></i>Infos & Inscription
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6 job-card">
+                <div class="card shadow-sm p-4 h-100 job-card-pro">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="fw-bold mb-1">Cuisinière Chef</h5>
+                            <p class="text-success mb-0 small fw-bold"><i class="bi bi-geo-alt-fill me-1"></i>Sèmè-Kraké
+                            </p>
+                        </div>
+                        <span class="badge badge-price rounded-pill px-3">80.000 F</span>
+                    </div>
+                    <p class="text-muted small flex-grow-1">Cuisine africaine, européenne et pâtisserie. Expérience de 2
+                        ans minimum. Hébergement obligatoire.</p>
+                    <div class="pt-3 border-top mt-3">
+                        <a href="https://wa.me/2290195681150" target="_blank"
+                            class="btn btn-success w-100 fw-bold rounded-pill shadow-sm">
+                            <i class="bi bi-whatsapp me-2"></i>Postuler via WISTON
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 job-card">
+                <div class="card shadow-sm p-4 h-100 job-card-pro">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="fw-bold mb-1">Chauffeur Personnel</h5>
+                            <p class="text-success mb-0 small fw-bold"><i class="bi bi-geo-alt-fill me-1"></i>Cotonou -
+                                Akpakpa</p>
+                        </div>
+                        <span class="badge bg-dark text-white rounded-pill px-3">Permis B</span>
+                    </div>
+                    <p class="text-muted small flex-grow-1">Permis catégorie B. Habiter les environs de Yenawa ou avoir
+                        son propre moyen de déplacement.</p>
+                    <div class="pt-3 border-top mt-3">
+                        <a href="https://wa.me/2290191645516" target="_blank"
+                            class="btn btn-success w-100 fw-bold rounded-pill shadow-sm">
+                            <i class="bi bi-whatsapp me-2"></i>Postuler via WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 job-card">
+                <div class="card shadow-sm p-4 h-100 job-card-pro">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="fw-bold mb-1">3 Serveuses (Bar-Restau)</h5>
+                            <p class="text-success mb-0 small fw-bold"><i class="bi bi-geo-alt-fill me-1"></i>Calavi -
+                                Tankpè</p>
+                        </div>
+                        <span class="badge bg-danger rounded-pill px-3">Hébergement inclus</span>
+                    </div>
+                    <p class="text-muted small flex-grow-1">Service matin et soirée. Équipe dynamique recherchée.
+                        Salaire : 30.000 F / mois.</p>
+                    <div class="pt-3 border-top mt-3 d-flex gap-2">
+                        <a href="https://wa.me/22953192599" target="_blank"
+                            class="btn btn-success flex-grow-1 fw-bold rounded-pill shadow-sm">
+                            <i class="bi bi-whatsapp me-2"></i>WhatsApp
+                        </a>
+                        <a href="tel:0144126578" class="btn btn-outline-dark rounded-pill shadow-sm">
+                            <i class="bi bi-telephone"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 job-card">
+                <div class="card shadow-sm p-4 h-100 job-card-pro border-2"
+                    style="border-color: #e67e22 !important; background-color: #fffaf5;">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="fw-bold mb-1" style="color: #d35400;">Devenir Freelance (Formation Offerte)</h5>
+                            <p class="text-muted mb-0 small fw-bold"><i class="bi bi-laptop me-1"></i>Télétravail /
+                                Revenus en devises</p>
+                        </div>
+                        <span class="badge bg-warning text-dark rounded-pill px-3">Opportunité Web</span>
+                    </div>
+                    <p class="text-muted small flex-grow-1">Apprenez à vendre vos services (Rédaction, CM, Assistance)
+                        en Europe/USA depuis le Bénin. Méthode éprouvée depuis 2018.</p>
+                    <div class="pt-3 border-top mt-3">
+                        <a href="https://training.exploitsmotivation.com/optin-potentiel-d-encaissement" target="_blank"
+                            class="btn btn-warning w-100 fw-bold rounded-pill shadow-sm"
+                            style="background-color: #e67e22; border: none; color: white;">
+                            <i class="bi bi-rocket-takeoff me-2"></i>Accéder à la formation gratuite
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 job-card">
+                <div class="card shadow-sm p-4 h-100 job-card-pro">
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <div>
+                            <h5 class="fw-bold mb-1">Réceptionniste Pressing</h5>
+                            <p class="text-success mb-0 small fw-bold"><i class="bi bi-geo-alt-fill me-1"></i>Cotonou -
+                                Agla</p>
+                        </div>
+                        <span
+                            class="badge bg-info-subtle text-info border border-info-subtle rounded-pill px-3">Urgent</span>
+                    </div>
+                    <p class="text-muted small flex-grow-1">Jeune fille sérieuse pour accueil client et gestion des
+                        dépôts dans un pressing à Agla.</p>
+                    <div class="pt-3 border-top mt-3">
+                        <a href="https://wa.me/2290191645516" target="_blank"
+                            class="btn btn-success w-100 fw-bold rounded-pill shadow-sm">
+                            <i class="bi bi-whatsapp me-2"></i>Contacter le recruteur
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="securityModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+                <div class="modal-header bg-danger text-white border-0 py-3">
+                    <h5 class="modal-title fw-bold mx-auto"><i class="bi bi-shield-lock me-2"></i>CHARTE DE SÉCURITÉ
+                    </h5>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="fw-bold text-dark mb-3">Avant de postuler :</p>
+                    <ul class="text-muted mb-4 small list-unstyled">
+                        <li class="mb-3"><i class="bi bi-check2-circle text-danger me-2"></i>Ne payez
+                            <strong>JAMAIS</strong> pour un badge ou un dossier.
+                        </li>
+                        <li class="mb-0"><i class="bi bi-check2-circle text-danger me-2"></i>Signalez tout comportement
+                            suspect au +229 01 43 97 16 13.</li>
+                    </ul>
+
+                    <label class="custom-check-container bg-light rounded-3 border border-danger-subtle"
+                        for="checkTerms">
+                        <input class="form-check-input border-danger shadow-none" type="checkbox" id="checkTerms"
+                            onchange="enableAccessButton()">
+                        <span class="small fw-bold text-danger">
+                            Je comprends les risques et je reste vigilant.
+                        </span>
+                    </label>
+                </div>
+                <div class="modal-footer border-0 p-3">
+                    <button type="button" id="btnAccess"
+                        class="btn btn-secondary w-100 py-2 fw-bold rounded-pill disabled" data-bs-dismiss="modal">Voir
+                        les offres</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white pt-5 pb-4 mt-5">
+        <div class="container">
+            <div class="row g-4 mb-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3" style="color: #4ade80;">Emploi <span style="color: #f39c12;">Bénin</span>
+                    </h5>
+                    <p class="text-secondary small">La référence pour l'emploi au Bénin.</p>
+                </div>
+                <div class="col-md-4 text-md-center">
+                    <h6 class="fw-bold mb-3">Suivez-nous</h6>
+                    <div class="d-flex justify-content-md-center gap-3">
+                        <a href="https://wa.me/message/YZFIKV2QMZZYK1" target="_blank"
+                            class="btn btn-outline-success btn-sm rounded-circle text-white border-secondary"><i
+                                class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <h6 class="fw-bold mb-3">Assistance</h6>
+                    <p class="small text-secondary mb-0">+229 01 43 97 16 13</p>
+                </div>
+            </div>
+            <div class="text-center pt-4 border-top border-secondary">
+                <p class="text-secondary small mb-0">&copy; 2026 Emploi Bénin.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const aDejaAccepte = localStorage.getItem('siteConditionsAcceptees');
+            if (!aDejaAccepte) {
+                const myModal = new bootstrap.Modal(document.getElementById('securityModal'));
+                myModal.show();
+            }
+        });
+
+        function enableAccessButton() {
+            const checkbox = document.getElementById('checkTerms');
+            const btn = document.getElementById('btnAccess');
+            if (checkbox.checked) {
+                btn.classList.replace('btn-secondary', 'btn-success');
+                btn.classList.remove('disabled');
+                btn.onclick = () => localStorage.setItem('siteConditionsAcceptees', 'true');
+            } else {
+                btn.classList.replace('btn-success', 'btn-secondary');
+                btn.classList.add('disabled');
+            }
+        }
+
+        document.getElementById('searchInput').addEventListener('keyup', function () {
+            let filter = this.value.toLowerCase();
+            document.querySelectorAll('.job-card').forEach(card => {
+                let content = card.innerText.toLowerCase();
+                card.style.display = content.includes(filter) ? "block" : "none";
+            });
+        });
+    </script>
+</body>
+
+</html>

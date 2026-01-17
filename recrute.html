@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruter - Emploi Bénin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        :root { --primary-green: #2e7d32; --accent-orange: #e67e22; }
+        body { background-color: #f8f9fa; }
+        .form-control:focus { border-color: var(--primary-green); box-shadow: 0 0 0 0.25rem rgba(46, 125, 50, 0.1); }
+        .btn-submit { background-color: var(--primary-green); color: white; font-weight: bold; border-radius: 50px; transition: 0.3s; }
+        .btn-submit:hover { background-color: #1b5e20; color: white; transform: scale(1.02); }
+        .card { border-radius: 20px; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html" style="color: var(--primary-green);">
+                <img src="assets/unnamed.jpg" alt="Logo" width="55" height="55" class="me-2 shadow-sm rounded">
+                <span>Emploi <span style="color: var(--accent-orange);">Bénin</span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-medium align-items-center">
+                    <li class="nav-item"><a class="nav-link px-3" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="offres.html">Offres</a></li>
+                    <li class="nav-item"><a class="nav-link active px-3 fw-bold" href="recruter.html">Recruter</a></li>
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0 w-100 w-lg-auto">
+                        <a class="btn btn-success rounded-pill px-4 w-100" href="creer-cv.html">Créer mon CV</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="bg-white py-5 border-bottom mb-4 mb-md-5">
+        <div class="container text-center px-3">
+            <h1 class="fw-bold">Trouvez le bon profil</h1>
+            <p class="text-muted lead">Déposez votre besoin en 2 minutes et recevez les meilleures candidatures sur WhatsApp.</p>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="card border-0 shadow-sm p-4">
+                    <form id="recruitmentForm">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-uppercase text-muted">Nom du Recruteur / Entreprise</label>
+                            <input type="text" id="nomRecruteur" class="form-control form-control-lg" placeholder="Ex: Restaurant Le Palmier" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-uppercase text-muted">Poste recherché</label>
+                            <input type="text" id="poste" class="form-control form-control-lg" placeholder="Ex: Serveuse, Chauffeur..." required>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label class="form-label fw-bold small text-uppercase text-muted">Lieu</label>
+                                <input type="text" id="ville" class="form-control" placeholder="Cotonou" required>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label class="form-label fw-bold small text-uppercase text-muted">Salaire (F CFA)</label>
+                                <input type="text" id="salaire" class="form-control" placeholder="Ex: 60.000 F">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold small text-uppercase text-muted">Détails du poste</label>
+                            <textarea id="description" class="form-control" rows="4" placeholder="Horaires, conditions, diplômes requis..."></textarea>
+                        </div>
+
+                        <button type="button" onclick="sendToWhatsApp()" class="btn btn-submit w-100 py-3 shadow">
+                            <i class="bi bi-whatsapp me-2"></i>Publier sur Emploi Bénin
+                        </button>
+                    </form>
+                </div>
+                <p class="text-center mt-3 small text-muted">Service gratuit proposé par Emploi Bénin.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white pt-5 pb-4 mt-auto">
+        <div class="container text-center">
+            <h6 class="fw-bold mb-3">Assistance & Support</h6>
+            <a href="https://wa.me/2290143971613" target="_blank" class="text-decoration-none">
+                <p class="small fw-bold mb-0" style="color: #4ade80;">
+                    <i class="bi bi-whatsapp me-2"></i>+229 01 43 97 16 13
+                </p>
+            </a>
+            <hr class="my-4 border-secondary opacity-25">
+            <p class="small text-secondary mb-0">&copy; 2026 Emploi Bénin. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function sendToWhatsApp() {
+            const recruteur = document.getElementById('nomRecruteur').value;
+            const poste = document.getElementById('poste').value;
+            const ville = document.getElementById('ville').value;
+            const salaire = document.getElementById('salaire').value || "À discuter";
+            const desc = document.getElementById('description').value || "Aucune description";
+
+            if(!recruteur || !poste || !ville) {
+                alert("Veuillez remplir les champs obligatoires (Nom, Poste et Lieu).");
+                return;
+            }
+
+            const message = `*NOUVELLE OFFRE DE RECRUTEMENT*%0A` +
+                            `--------------------------%0A` +
+                            `🏢 *Recruteur:* ${recruteur}%0A` +
+                            `💼 *Poste:* ${poste}%0A` +
+                            `📍 *Lieu:* ${ville}%0A` +
+                            `💰 *Salaire:* ${salaire}%0A` +
+                            `📝 *Description:* ${desc}%0A` +
+                            `--------------------------%0A` +
+                            `_Demande envoyée depuis le site Emploi Bénin_`;
+
+            const url = `https://wa.me/2290143971613?text=${message}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
