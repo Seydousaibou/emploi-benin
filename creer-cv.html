@@ -6,19 +6,19 @@
     <title>Création de CV - Emploi Bénin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
     <style>
         .cv-card { border-radius: 20px; border: none; }
         .form-control { padding: 12px; border-radius: 10px; border: 1px solid #dee2e6; }
         .form-control:focus { border-color: #198754; box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.1); }
         .price-badge { background-color: #fff9eb; border: 1px dashed #e67e22; border-radius: 10px; }
+        .navbar-brand { color: #2e7d32; }
     </style>
 </head>
 <body class="bg-light">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html" style="color: #2e7d32;">
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
                 <img src="assets/unnamed.jpg" alt="Logo" width="55" height="55" class="me-2 shadow-sm rounded">
                 <span>Emploi <span style="color: #e67e22;">Bénin</span></span>
             </a>
@@ -29,8 +29,7 @@
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link px-3" href="index.html">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="offres.html">Offres d'emploi</a></li>
-                    <li class="nav-item"><a class="nav-link active px-3 fw-bold text-success" href="a_propos.html">À propos</a></li>
-                    <li class="nav-item"><a class="nav-link active px-3 fw-bold" href="creer-cv.html">Profils/CV</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 fw-bold" href="creer-cv.html">Profils/CV</a></li>
                     <li class="nav-item ms-lg-3">
                         <a href="index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3">← Retour</a>
                     </li>
@@ -44,7 +43,7 @@
             <div class="col-md-6">
                 <div class="text-center mb-4">
                     <h2 class="fw-bold">Mon CV Professionnel</h2>
-                    <p class="text-muted">Remplissez les informations de base pour lancer la conception.</p>
+                    <p class="text-muted">Remplissez les informations pour recevoir votre CV sur WhatsApp.</p>
                 </div>
                 
                 <div class="card cv-card p-4 p-md-5 shadow-sm bg-white">
@@ -56,12 +55,12 @@
 
                         <div class="mb-4">
                             <label class="form-label fw-bold small text-uppercase">Diplômes / Compétences</label>
-                            <textarea id="infos" class="form-control" rows="4" placeholder="Ex: Licence en Gestion, Maîtrise de l'outil informatique, Anglais intermédiaire..."></textarea>
+                            <textarea id="infos" class="form-control" rows="4" placeholder="Ex: Licence en Gestion, Anglais intermédiaire..."></textarea>
                         </div>
 
                         <div class="price-badge p-3 mb-4 text-center">
-                            <p class="mb-0 text-dark">Tarif unique : <span class="fw-bold fs-5 text-warning" style="color: #e67e22 !important;">500F CFA</span></p>
-                            <small class="text-muted">Paiement sécurisé par MTN ou Moov Money</small>
+                            <p class="mb-0 text-dark">Tarif unique : <span class="fw-bold fs-5" style="color: #e67e22;">500F CFA</span></p>
+                            <small class="text-muted">Paiement par MTN ou Moov Money</small>
                         </div>
 
                         <button type="button" onclick="envoyerWhatsApp()" class="btn btn-success w-100 py-3 fw-bold rounded-pill shadow-sm">
@@ -69,17 +68,11 @@
                         </button>
                     </form>
                 </div>
-
-                <div class="mt-4 text-center">
-                    <p class="small text-muted">
-                        <i class="bi bi-clock-history me-1"></i> Livraison de votre CV sous 24h au format PDF.
-                    </p>
-                </div>
             </div>
         </div>
     </div>
 
-      <footer class="bg-dark text-white pt-5 pb-4">
+    <footer class="bg-dark text-white pt-5 pb-4">
         <div class="container">
             <div class="row g-4 mb-4">
                 <div class="col-md-4">
@@ -133,30 +126,33 @@
 
     <script>
         function envoyerWhatsApp() {
+            // 1. Récupération des données du formulaire
             const nom = document.getElementById('nom').value;
             const infos = document.getElementById('infos').value;
             
-            // Si le nom est vide, on alerte l'utilisateur
+            // 2. Vérification du nom
             if(nom.trim() === "") {
                 alert("Veuillez entrer votre nom complet.");
                 return;
             }
 
-            // Construction du message pour ton WhatsApp
+            // 3. Préparation du message (bien formaté pour WhatsApp)
             const message = `*COMMANDE DE CV PROFESSIONNEL*%0A` +
                             `--------------------------%0A` +
-                            `👤 *Nom :* ${nom}%0A` +
-                            `📝 *Infos/Diplômes :* ${infos}%0A` +
+                            `👤 *Nom :* ${encodeURIComponent(nom)}%0A` +
+                            `📝 *Diplômes :* ${encodeURIComponent(infos)}%0A` +
                             `--------------------------%0A` +
                             `_Je souhaite procéder au paiement de 500F._`;
 
-            // Utilisation de ton lien personnalisé
-            const tonLien = "https://wa.me/message/YZFIKV2QMZZYK1";
+            // 4. Votre numéro au format international (Bénin : 229)
+            const numero = "2290143971613";
             
-            window.open(`${tonLien}?text=${message}`, '_blank');
+            // 5. Lien API direct pour ouvrir WhatsApp et envoyer les infos
+            const url = `https://api.whatsapp.com/send?phone=${numero}&text=${message}`;
+            
+            // Ouverture dans un nouvel onglet
+            window.open(url, '_blank');
         }
     </script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
