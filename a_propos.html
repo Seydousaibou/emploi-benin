@@ -3,34 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Création de CV - Emploi Bénin</title>
+    <title>À Propos - Emploi Bénin</title>
+    <!-- Bootstrap CSS pour la cohérence avec le reste du site -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="style.css">
     <style>
-        .cv-card { border-radius: 20px; border: none; }
-        .form-control { padding: 12px; border-radius: 10px; border: 1px solid #dee2e6; }
-        .form-control:focus { border-color: #198754; box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.1); }
-        .price-badge { background-color: #fff9eb; border: 1px dashed #e67e22; border-radius: 10px; }
+        :root {
+            --primary-green: #2e7d32;
+            --accent-orange: #e67e22;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; }
+        .about-card { border-radius: 30px; border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .vision-box { background-color: #f0fdf4; border-radius: 20px; padding: 20px; }
+        .engagement-box { background-color: #fff9eb; border-radius: 20px; padding: 20px; }
     </style>
 </head>
-<body class="bg-light">
+<body>
 
+    <!-- NAVBAR (Menu de retour) -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html" style="color: #2e7d32;">
+            <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html" style="color: var(--primary-green);">
                 <img src="assets/unnamed.jpg" alt="Logo" width="55" height="55" class="me-2 shadow-sm rounded">
-                <span>Emploi <span style="color: #e67e22;">Bénin</span></span>
+                <span>Emploi <span style="color: var(--accent-orange);">Bénin</span></span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link px-3" href="index.html">Accueil</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="offres.html">Offres d'emploi</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-dark" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-dark" href="offres.html">Offres d'emploi</a></li>
                     <li class="nav-item"><a class="nav-link active px-3 fw-bold text-success" href="a_propos.html">À propos</a></li>
-                    <li class="nav-item"><a class="nav-link active px-3 fw-bold" href="creer-cv.html">Profils/CV</a></li>
+                    <li class="nav-item"><a class="nav-link px-3 text-dark" href="creer-cv.html">Profils/CV</a></li>
                     <li class="nav-item ms-lg-3">
                         <a href="index.html" class="btn btn-outline-dark btn-sm rounded-pill px-3">← Retour</a>
                     </li>
@@ -39,47 +44,53 @@
         </div>
     </nav>
 
-    <div class="container py-5">
+    <!-- CONTENU À PROPOS -->
+    <main class="container py-5">
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="text-center mb-4">
-                    <h2 class="fw-bold">Mon CV Professionnel</h2>
-                    <p class="text-muted">Remplissez les informations de base pour lancer la conception.</p>
-                </div>
+            <div class="col-lg-8">
                 
-                <div class="card cv-card p-4 p-md-5 shadow-sm bg-white">
-                    <form id="cvForm">
-                        <div class="mb-4">
-                            <label class="form-label fw-bold small text-uppercase">Nom complet</label>
-                            <input type="text" id="nom" class="form-control" placeholder="Ex: Jean SOSSOU" required>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="form-label fw-bold small text-uppercase">Diplômes / Compétences</label>
-                            <textarea id="infos" class="form-control" rows="4" placeholder="Ex: Licence en Gestion, Maîtrise de l'outil informatique, Anglais intermédiaire..."></textarea>
-                        </div>
-
-                        <div class="price-badge p-3 mb-4 text-center">
-                            <p class="mb-0 text-dark">Tarif unique : <span class="fw-bold fs-5 text-warning" style="color: #e67e22 !important;">500F CFA</span></p>
-                            <small class="text-muted">Paiement sécurisé par MTN ou Moov Money</small>
-                        </div>
-
-                        <button type="button" onclick="envoyerWhatsApp()" class="btn btn-success w-100 py-3 fw-bold rounded-pill shadow-sm">
-                            <i class="bi bi-whatsapp me-2"></i>Commander via WhatsApp
-                        </button>
-                    </form>
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold display-6">À Propos de Emploi Bénin</h2>
+                    <p class="text-muted">Découvrez notre mission pour l'emploi au pays.</p>
                 </div>
 
-                <div class="mt-4 text-center">
-                    <p class="small text-muted">
-                        <i class="bi bi-clock-history me-1"></i> Livraison de votre CV sous 24h au format PDF.
-                    </p>
+                <div class="card about-card p-4 p-md-5 bg-white">
+                    <div class="space-y-4">
+                        <p class="lead">
+                            <span class="fw-bold" style="color: var(--primary-green);">Emploi Bénin</span> est une plateforme numérique indépendante dédiée à la promotion de l'emploi et de l'entrepreneuriat au Bénin.
+                        </p>
+                        
+                        <p class="text-secondary">
+                            Notre mission est de simplifier la rencontre entre les talents locaux et les opportunités professionnelles. Face aux difficultés de recherche d'emploi, nous avons créé cet espace gratuit pour permettre aux chercheurs d'emploi de consulter des offres vérifiées et aux recruteurs de trouver rapidement des profils qualifiés.
+                        </p>
+
+                        <div class="row g-4 mt-4">
+                            <div class="col-md-6">
+                                <div class="vision-box border-start border-success border-4 h-100">
+                                    <h4 class="fw-bold text-success mb-2 italic">Notre Vision</h4>
+                                    <p class="small text-dark mb-0">Devenir le pont numérique n°1 pour l'insertion professionnelle des jeunes et des cadres au Bénin.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="engagement-box border-start border-warning border-4 h-100">
+                                    <h4 class="fw-bold text-warning mb-2 italic">Engagement</h4>
+                                    <p class="small text-dark mb-0">Nous garantissons la gratuité de l'accès aux offres pour tous les candidats et une visibilité maximale pour les entreprises.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-5 pt-4 border-top">
+                            <p class="text-muted small text-uppercase tracking-widest">Plateforme indépendante • Service 100% Béninois</p>
+                            <a href="index.html" class="btn btn-success rounded-pill px-5 py-2 fw-bold mt-2">Retourner à l'accueil</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-      <footer class="bg-dark text-white pt-5 pb-4">
+    <!-- FOOTER -->
+    <footer class="bg-dark text-white pt-5 pb-4">
         <div class="container">
             <div class="row g-4 mb-4">
                 <div class="col-md-4">
@@ -131,32 +142,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        function envoyerWhatsApp() {
-            const nom = document.getElementById('nom').value;
-            const infos = document.getElementById('infos').value;
-            
-            // Si le nom est vide, on alerte l'utilisateur
-            if(nom.trim() === "") {
-                alert("Veuillez entrer votre nom complet.");
-                return;
-            }
-
-            // Construction du message pour ton WhatsApp
-            const message = `*COMMANDE DE CV PROFESSIONNEL*%0A` +
-                            `--------------------------%0A` +
-                            `👤 *Nom :* ${nom}%0A` +
-                            `📝 *Infos/Diplômes :* ${infos}%0A` +
-                            `--------------------------%0A` +
-                            `_Je souhaite procéder au paiement de 500F._`;
-
-            // Utilisation de ton lien personnalisé
-            const tonLien = "https://wa.me/message/YZFIKV2QMZZYK1";
-            
-            window.open(`${tonLien}?text=${message}`, '_blank');
-        }
-    </script>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
