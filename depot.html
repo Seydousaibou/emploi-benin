@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postuler via WhatsApp | Emploi Bénin</title>
+
+  <!-- Intégration des bibliothèques nécessaires -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+  <style>
+    :root {
+      --primary-green: #2e7d32;
+      --accent-orange: #e67e22;
+      --whatsapp-green: #25D366;
+      --light-bg: #f8fafc;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--light-bg);
+      color: #334155;
+    }
+
+    /* Navbar Custom */
+    .navbar {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-brand img {
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    /* Card Formulaire */
+    .form-card {
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+      border: none;
+      overflow: hidden;
+      margin-top: 30px;
+      margin-bottom: 50px;
+    }
+
+    .card-header-banner {
+      background: var(--primary-green);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .card-header-banner i {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    /* Inputs */
+    .form-label {
+      font-weight: 700;
+      color: #475569;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .form-control,
+    .form-select {
+      border-radius: 12px;
+      padding: 12px 16px;
+      border: 2px solid #e2e8f0;
+      background-color: #f8fafc;
+      transition: all 0.2s;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: var(--primary-green);
+      background-color: white;
+      box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1);
+    }
+
+    /* Bouton WhatsApp */
+    .btn-wa-submit {
+      background-color: var(--whatsapp-green);
+      color: white;
+      border: none;
+      border-radius: 16px;
+      padding: 18px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      transition: all 0.3s;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+      margin-top: 20px;
+    }
+
+    .btn-wa-submit:hover {
+      background-color: #128C7E;
+      transform: translateY(-3px);
+      color: white;
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+    }
+
+    .section-title {
+      color: var(--primary-green);
+      font-weight: 800;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 25px;
+      margin-top: 10px;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      background: #f1f5f9;
+    }
+
+    .footer-text {
+      text-align: center;
+      padding-bottom: 40px;
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Barre de Navigation Mise à jour -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html" style="color: var(--primary-green);">
+        <img src="assets/unnamed.jpg" alt="Logo" width="55" height="55" class="me-2 shadow-sm"
+          onerror="this.src='https://via.placeholder.com/55'">
+        <span>Emploi <span style="color: var(--accent-orange);">Bénin</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto fw-medium">
+          <li class="nav-item">
+            <a class="nav-link px-3 text-dark" href="index.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3 text-dark" href="offres.html">Offres d'emploi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3 text-dark" href="depot.html">Candidature</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3 text-dark" href="a_propos.html">À propos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-3 text-dark" href="creer-cv.html">Profils/CV</a>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn btn-success rounded-pill px-4 text-white shadow-sm" href="creer-cv.html">Créer mon CV</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-9">
+
+        <!-- Carte du Formulaire -->
+        <div class="form-card animate__animated animate__fadeIn">
+          <div class="card-header-banner">
+            <i class="bi bi-whatsapp"></i>
+            <h2 class="h4 fw-bold mb-1">Candidature Spontanée</h2>
+            <p class="mb-0 opacity-75 small">Votre profil sera envoyé directement sur notre WhatsApp</p>
+          </div>
+
+          <div class="p-4 p-md-5">
+            <form id="formRecrutementWA">
+
+              <!-- Section 1 -->
+              <div class="section-title text-uppercase">Informations Personnelles</div>
+              <div class="row g-3 mb-4">
+                <div class="col-12">
+                  <label class="form-label">Nom et Prénoms complets</label>
+                  <div class="input-group">
+                    <span class="input-group-text bg-white"><i class="bi bi-person text-muted"></i></span>
+                    <input type="text" id="nom" class="form-control" placeholder="Ex: Jean SOSSOU" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Ville actuelle</label>
+                  <input type="text" id="ville" class="form-control" placeholder="Ex: Cotonou" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Numéro de téléphone</label>
+                  <input type="tel" id="telephone" class="form-control" placeholder="Ex: 01 00 00 00 00" required>
+                </div>
+              </div>
+
+              <!-- Section 2 -->
+              <div class="section-title text-uppercase">Parcours & Compétences</div>
+              <div class="row g-3 mb-4">
+                <div class="col-12">
+                  <label class="form-label">Quel est votre métier / domaine ?</label>
+                  <select id="domaine" class="form-select" required>
+                    <option value="" disabled selected>Choisir un domaine...</option>
+                    <option>Informatique / Digital / Graphisme</option>
+                    <option>Commerce / Vente / Marketing</option>
+                    <option>Secrétariat / RH / Administration</option>
+                    <option>Comptabilité / Finance</option>
+                    <option>BTP / Électricité / Menuiserie</option>
+                    <option>Santé / Médecine / Pharmacie</option>
+                    <option>Transport / Chauffeur / Logistique</option>
+                    <option>Cuisine / Hôtellerie / Service</option>
+                    <option>Autre domaine</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Dernier diplôme / Attestation (Facultatif)</label>
+                  <select id="diplome" class="form-select">
+                    <option value="Non précisé" selected>Non précisé</option>
+                    <option>Sans diplôme</option>
+                    <option>Attestation de formation</option>
+                    <option>BEPC / CAP</option>
+                    <option>BAC</option>
+                    <option>Licence (BAC+3)</option>
+                    <option>Master (BAC+5)</option>
+                    <option>Doctorat / Expert</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Expérience (Facultatif)</label>
+                  <select id="experience" class="form-select">
+                    <option value="Non précisée" selected>Non précisée</option>
+                    <option>Aucune expérience</option>
+                    <option>Débutant (Moins d'un an)</option>
+                    <option>Junior (1 à 2 ans)</option>
+                    <option>Intermédiaire (3 à 5 ans)</option>
+                    <option>Senior (Plus de 5 ans)</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">Dites-nous en plus (Facultatif)</label>
+                  <textarea id="motivation" class="form-control" rows="3"
+                    placeholder="Parlez-nous brièvement de vos compétences clés..."></textarea>
+                </div>
+              </div>
+
+              <div class="alert alert-light border-0 small text-muted text-center py-3">
+                <i class="bi bi-shield-check me-1"></i> En envoyant, vous acceptez de partager vos informations avec
+                notre service de recrutement.
+              </div>
+
+              <!-- Bouton Final -->
+              <button type="submit" class="btn btn-wa-submit">
+                <i class="bi bi-whatsapp"></i> Envoyer ma candidature
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-text">
+          &copy; 2026 Emploi Bénin. La plateforme de recrutement n°1 au Bénin.
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Script de traitement WhatsApp -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('formRecrutementWA').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // CONFIGURATION DU NUMÉRO RÉCEPTEUR
+      const monNumeroWA = "2290143971613";
+
+      // COLLECTE DES DONNÉES
+      const nom = document.getElementById('nom').value;
+      const ville = document.getElementById('ville').value;
+      const tel = document.getElementById('telephone').value;
+      const domaine = document.getElementById('domaine').value;
+      const diplome = document.getElementById('diplome').value;
+      const exp = document.getElementById('experience').value;
+      const motivation = document.getElementById('motivation').value;
+
+      // CONSTRUCTION DU MESSAGE
+      let message = `*📢 NOUVELLE CANDIDATURE (Emploi Bénin)*\n\n`;
+      message += `👤 *Candidat :* ${nom}\n`;
+      message += `📍 *Ville :* ${ville}\n`;
+      message += `📞 *Tel :* ${tel}\n\n`;
+      message += `--- *DÉTAILS DU PROFIL* ---\n`;
+      message += `💼 *Domaine :* ${domaine}\n`;
+      message += `🎓 *Diplôme :* ${diplome}\n`;
+      message += `⏳ *Expérience :* ${exp}\n`;
+
+      if (motivation.trim() !== "") {
+        message += `\n📝 *Infos complémentaires :*\n_${motivation}_\n`;
+      }
+
+      message += `\n--------------------------\n`;
+      message += `_Candidature spontanée via depot.html_`;
+
+      // ENCODAGE ET REDIRECTION
+      const encodeMsg = encodeURIComponent(message);
+      const lienWhatsApp = `https://wa.me/${monNumeroWA}?text=${encodeMsg}`;
+
+      // OUVERTURE DANS UN NOUVEL ONGLET
+      window.open(lienWhatsApp, '_blank');
+    });
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3" style="color: #4ade80;">Emploi <span style="color: #f39c12;">Bénin</span>
+          </h5>
+          <p class="text-secondary small">
+            La plateforme de référence pour l'emploi au Bénin. Simple, rapide et efficace pour connecter
+            talents et recruteurs.
+          </p>
+        </div>
+
+        <div class="col-md-4 text-md-center">
+          <h6 class="fw-bold mb-3 text-white">Suivez-nous</h6>
+          <div class="d-flex justify-content-md-center gap-3">
+            <a href="https://wa.me/message/YZFIKV2QMZZYK1" target="_blank"
+              class="btn btn-outline-success btn-sm rounded-circle text-white border-secondary">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="https://www.facebook.com/share/1RPUs7h9vj/" target="_blank"
+              class="btn btn-outline-primary btn-sm rounded-circle text-white border-secondary">
+              <i class="bi bi-facebook"></i>
+            </a>
+            <a href="#" target="_blank" class="btn btn-outline-info btn-sm rounded-circle text-white border-secondary">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-md-end">
+          <h6 class="fw-bold mb-3 text-white">Assistance</h6>
+          <a href="https://wa.me/2290143971613" target="_blank" class="text-decoration-none">
+            <p class="small fw-bold mb-0" style="color: #4ade80;">
+              <i class="bi bi-whatsapp me-2"></i>+229 01 43 97 16 13
+            </p>
+          </a>
+          <p class="small text-secondary mt-1">Discutons sur WhatsApp</p>
+        </div>
+      </div>
+
+      <div class="text-center pt-4 border-top border-secondary">
+        <p class="text-secondary small mb-0">
+          &copy; 2026 <span class="text-white fw-bold">Emploi Bénin</span> - Recrutement & Conseils.
+          Tous droits réservés.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
